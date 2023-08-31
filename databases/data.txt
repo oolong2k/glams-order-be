@@ -1,0 +1,27 @@
+-- Create the Users table
+Users
+    id (PK),
+    user_name TEXT,
+    color TEXT
+
+-- Create the Products table
+Products
+    id (PK),
+    name TEXT
+
+-- Create the Roles table
+Roles
+    id (PK),
+    name TEXT
+
+-- Create the Orders table
+Orders
+    id (PK),
+    order_date DATE,
+    product_id INTEGER,
+    user_id INTEGER,
+    role_id INTEGER,
+    quantity INTEGER,
+    FOREIGN KEY (product_id) REFERENCES Products (id),
+    FOREIGN KEY (user_id) REFERENCES Users (id),
+    FOREIGN KEY (role_id) REFERENCES Roles (id)
